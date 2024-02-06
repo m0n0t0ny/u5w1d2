@@ -1,4 +1,4 @@
-package com.antoniobertuccio.u5w1d1.entities;
+package com.antoniobertuccio.u5w1d2.Restaurant.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

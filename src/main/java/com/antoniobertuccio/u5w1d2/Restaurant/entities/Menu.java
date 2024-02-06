@@ -1,4 +1,4 @@
-package com.antoniobertuccio.u5w1d1.entities;
+package com.antoniobertuccio.u5w1d2.Restaurant.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,4 +13,6 @@ public class Menu {
   private List<Pizza> pizzas;
   private List<Drink> drinks;
   private List<Topping> toppings;
+  private double coverCharge;
+  private List<Table> tables;
 }

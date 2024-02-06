@@ -1,5 +1,6 @@
-package com.antoniobertuccio.u5w1d1.entities;
+package com.antoniobertuccio.u5w1d2.Restaurant.entities;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -9,6 +10,10 @@ import java.util.List;
 
 @Configuration
 public class AppConfig {
+
+
+  @Value("${cover.charge.price}")
+  private double coverChargePrice;
 
   //  TOPPING 🧀
 
@@ -79,13 +84,19 @@ public class AppConfig {
     return new Pizza("Salami", 1160, 5.99, toppingPizzaSalami);
   }
 
-  //  MENU
+  //  MENU 📜
 
   @Bean
-  Menu getMenu() {
+  Menu getMenu(@Value("${cover.charge.price}") double coverCharge) {
     List<Pizza> pizzas = new ArrayList<>(Arrays.asList(getPizzaMargherita(), getPizzaHawaiian(), getPizzaSalami()));
     List<Drink> drinks = new ArrayList<>(Arrays.asList(getWine(), getWater(), getLemonade()));
     List<Topping> toppings = new ArrayList<>(Arrays.asList(getSalami(), getHam(), getCheese(), getPineapple(), getOnions(), getTomato()));
-    return new Menu(pizzas, drinks, toppings);
+
+    List<Table> tables = new ArrayList<>();
+    tables.add(new Table(1, 4, false));
+    tables.add(new Table(2, 6, false));
+    tables.add(new Table(3, 2, true));
+
+    return new Menu(pizzas, drinks, toppings, coverCharge, tables);
   }
 }

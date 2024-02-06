@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.AntonioBertuccio</groupId>
-	<artifactId>u5w1d1</artifactId>
+	<artifactId>u5w1d2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>PizzoranteRistoria</name>
 	<description>Demo project for Spring Boot</description>
